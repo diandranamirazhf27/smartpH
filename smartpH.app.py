@@ -706,7 +706,7 @@ Dari massa dan volume basa lemah:
         st.header(":blue[Hubungi Kami]")
         st.write("Silahkan tinggalkan pesan Anda pada kolom yang tersedia.")
         contact_from = """
-        <form action="https://formsubmit.co/riskamaulidya818@gmail.com" method="POST">
+        <form action="https://formsubmit.co/hahapaantuh1@gmail.com" method="POST">
             <input type="email" name="email" placeholder="Email Anda" required>
             <textarea name="message" placeholder="Pesan Anda"></textarea>
             <button type="submit">Send</button>
