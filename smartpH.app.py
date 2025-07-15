@@ -588,10 +588,7 @@ elif selected == "Tentang Aplikasi":
     ''')
         st.write('Asam meningkatkan konsentrasi ion hidrogen (H+) dalam larutan, sedangkan basa menurunkannya dengan menghasilkan ion hidroksida (OH−) yang bergabung dengan ion hidrogen menghasilkan air.')
         
-        from PIL import Image
-        st.image(
-                "SKALAPH.jpg", width=500
-                )
+    
         
         #Rumus pH
         st.header(":blue[Rumus pH]")
