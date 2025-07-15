@@ -96,13 +96,13 @@ if selected == "Beranda":
     st.markdown('<div style="text-align: center;">Kalkulator pH Larutan adalah alat online gratis yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!</div>', unsafe_allow_html=True)
     st.markdown('---')
     st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
-    st.write('KELOMPOK 4 (1D - ANALISIS KIMIA)')
+    st.write('KELOMPOK 5 (1C)')
     st.write('''
-1. Fairuz Zahrany De Shaula    (2360122)
-2. Kesya Melia Andriani        (2360156)
-3. Reza Imelda                 (2360238) 
-4. Riska Maulidya Ainy         (2360242) 
-5. Talitha Syahla Kurniawan    (2360275)
+1. Amar Evan Gading            (2460321)
+2. Diandra Namira Zahfa        (2460360)
+3. Lutfhia Salwani Fatonah     (2460410) 
+4. Nevi Sahara                 (2460471) 
+5. Taufan Aliafi               (2460525)
 ''')
     st.markdown('---')
     
@@ -706,7 +706,7 @@ Dari massa dan volume basa lemah:
         st.header(":blue[Hubungi Kami]")
         st.write("Silahkan tinggalkan pesan Anda pada kolom yang tersedia.")
         contact_from = """
-        <form action="https://formsubmit.co/hahapaantuh1@gmail.com" method="POST">
+        <form action="https://formsubmit.co/riskamaulidya818@gmail.com" method="POST">
             <input type="email" name="email" placeholder="Email Anda" required>
             <textarea name="message" placeholder="Pesan Anda"></textarea>
             <button type="submit">Send</button>
