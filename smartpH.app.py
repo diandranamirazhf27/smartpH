@@ -4,25 +4,77 @@ import streamlit as st
 import math
 from streamlit_option_menu import option_menu
 
+# --- THEME: Roblox style -------------------------------------------------
+st.set_page_config(page_title="Kalkulator pH", page_icon=":video_game:", layout="wide")
+
 st.markdown("""
 <style>
-    html, body, [class*="css"] {
-        background-color: #121212;
-        color: white;
-        font-family: 'Trebuchet MS', sans-serif;
-    }
-    .stButton>button {
-        background-color: #00bfff;
-        color: white;
-        border-radius: 10px;
-        font-weight: bold;
-        padding: 8px 16px;
-    }
-    .stSidebar {
-        background-color: #1f1f1f;
-    }
+/* palet Roblox */
+:root {
+  --rbx-red: #ff3131;
+  --rbx-dark: #0f0f0f;
+  --rbx-light: #ffffff;
+}
+
+/* font & warna dasar */
+html, body, [class*="css"]  {
+  background-color: var(--rbx-dark);
+  color: var(--rbx-light);
+  font-family: 'Noto Sans', 'Trebuchet MS', sans-serif;
+}
+
+/* sidebar */
+section[data-testid="stSidebar"] > div:first-child  {
+  background: var(--rbx-red);
+}
+
+/* tombol utama  */
+.stButton>button {
+  background-color: var(--rbx-red);
+  color: var(--rbx-light);
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 10px 18px;
+  transition: 0.2s;
+}
+.stButton>button:hover {
+  filter: brightness(120%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}
+
+/* judul & header */
+h1, h2, h3 {
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+/* horizontal nav option‑menu */
+span.badge.rounded-pill.bg-primary {
+  background: var(--rbx-red) !important;
+}
+
+/* kotak form kontak */
+input, textarea { 
+  width: 100%; 
+  border-radius: 6px; 
+  padding: 6px 8px; 
+  border: 2px solid var(--rbx-red); 
+  background: var(--rbx-light); 
+  color: #000;
+}
+button[type=submit] {
+  background: var(--rbx-red); 
+  color: var(--rbx-light); 
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 6px; 
+  font-weight: bold;
+}
 </style>
 """, unsafe_allow_html=True)
+# -------------------------------------------------------------------------
+
 
 st.set_page_config(page_title="Kalkulator pH", page_icon=":1234:", layout="wide")
 
@@ -108,23 +160,32 @@ with st.sidebar:
     )
 
 if selected == "Beranda":
-    st.markdown("<h1 style='text-align: center; color: blue;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
-    left, mid, right = st.columns(3)
-    with mid:
-        st.image("D:\kalkulator_ph_larutan\logoapp.gif")    
+    st.markdown("<h1 style='text-align:center;'>SELAMAT DATANG DI KALKULATOR pH</h1>", unsafe_allow_html=True)
+
+    # logo – simpan logo di folder 'assets' pada repo
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.image("assets/logoapp.gif", use_column_width=True)
+
+    st.markdown("""<div style="text-align:center;">
+        Kalkulator pH Larutan membantu Anda menghitung pH dengan cepat & akurat.
+        <br>Pilih metode perhitungan melalui menu di samping!
+    </div>""", unsafe_allow_html=True)
+
     st.markdown('---')
-    st.markdown('<div style="text-align: center;">Kalkulator pH Larutan adalah alat online gratis yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!</div>', unsafe_allow_html=True)
-    st.markdown('---')
-    st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
-    st.write('KELOMPOK 5 (1C)')
-    st.write('''
-1. Amar Evan Gading            (2460321)
-2. Diandra Namira Zahfa        (2460360)
-3. Lutfhia Salwani Fatonah     (2460410) 
-4. Nevi Sahara                 (2460471) 
-5. Taufan Aliafi               (2460525)
-''')
-    st.markdown('---')
+    st.markdown("<h2 style='text-align:center;'>DIBUAT OLEH KELOMPOK 5 (1C)</h2>", unsafe_allow_html=True)
+
+    cols = st.columns(5)
+    nama = [
+        "Amar Evan Gading (2460321)",
+        "Diandra Namira Zahfa (2460360)",
+        "Lutfhia Salwani Fatonah (2460410)",
+        "Nevi Sahara (2460471)",
+        "Taufan Aliafi (2460525)"
+    ]
+    for c, n in zip(cols, nama):
+        c.write(f"✅ **{n}**")
+
     
 elif selected == "Konsentrasi Asam":
     st.title(":blue[Kalkulator pH Larutan]")
@@ -737,4 +798,7 @@ Dari massa dan volume basa lemah:
             with open(file_name) as f:
                 st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
                 
-        local_css("D:\kalkulator_ph_larutan\style.css")
+st.image("assets/SKALAPH.jpg", width=500)
+...
+st.image("assets/RUMUSPH.jpg", width=500)
+
