@@ -1,0 +1,4 @@
+streamlit
+matplotlib
+numpy
+streamlit_option_menu
