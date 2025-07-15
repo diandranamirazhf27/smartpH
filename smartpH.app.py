@@ -88,23 +88,40 @@ with st.sidebar:
     )
 
 if selected == "Beranda":
-    st.markdown("<h1 style='text-align: center; color: blue;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
-    left, mid, right = st.columns(3)
-    with mid:
-        st.image("D:\kalkulator_ph_larutan\logoapp.gif")    
+    # Judul warna merah Roblox
+    st.markdown(
+        "<h1 style='text-align:center; color:#ff3131;'>SELAMAT DATANG DI KALKULATOR pH</h1>",
+        unsafe_allow_html=True,
+    )
+
+    # Banner Roblox (pakai path relatif → assets/)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image("assets/roblox_banner.gif", use_column_width=True)
+
     st.markdown('---')
-    st.markdown('<div style="text-align: center;">Kalkulator pH Larutan adalah alat online gratis yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!</div>', unsafe_allow_html=True)
+    st.markdown(
+        "<div style='text-align:center;'>Kalkulator pH Larutan adalah alat online gratis "
+        "yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. "
+        "Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!"
+        "</div>",
+        unsafe_allow_html=True,
+    )
     st.markdown('---')
-    st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
-    st.write('KELOMPOK 5 (1C)')
-    st.write('''
-1. Amar Evan Gading            (2460321)
-2. Diandra Namira Zahfa        (2460360)
-3. Lutfhia Salwani Fatonah     (2460410) 
-4. Nevi Sahara                 (2460471) 
-5. Taufan Aliafi               (2460525)
-''')
+
+    st.markdown("<h2 style='color:#ff3131;'>DIBUAT OLEH :</h2>", unsafe_allow_html=True)
+    st.write('KELOMPOK 5 (1C)')
+    st.write(
+        """
+1. Amar Evan Gading    (2460321)  
+2. Diandra Namira Zahfa  (2460360)  
+3. Lutfhia Salwani Fatonah (2460410)  
+4. Nevi Sahara       (2460471)  
+5. Taufan Aliafi      (2460525)
+"""
+    )
     st.markdown('---')
+
     
 elif selected == "Konsentrasi Asam":
     st.title(":blue[Kalkulator pH Larutan]")
@@ -587,10 +604,8 @@ elif selected == "Tentang Aplikasi":
     - PH 7 dianggap netral, artinya tidak bersifat asam atau basa. Air murni biasanya dianggap netral, dengan pH 7. 
     ''')
         st.write('Asam meningkatkan konsentrasi ion hidrogen (H+) dalam larutan, sedangkan basa menurunkannya dengan menghasilkan ion hidroksida (OH−) yang bergabung dengan ion hidrogen menghasilkan air.')
-        
-    
-        
-        #Rumus pH
+
+ #Rumus pH
         st.header(":blue[Rumus pH]")
         st.image(
                 "RUMUSPH.jpg", width=500
@@ -697,21 +712,5 @@ Dari massa dan volume basa lemah:
         st.markdown('---')
         st.write('Soal lainnya dapat diakses dengan mengklik tautan dibawah ini.')
         st.write("[Tautan](https://drive.google.com/drive/folders/1_NOPmnEaZKHsPQHVr6ITyha8-J7rQYrF?usp=sharing)")
-        
-    #Kontak
-    elif selected6 == "Kontak":
-        st.header(":blue[Hubungi Kami]")
-        st.write("Silahkan tinggalkan pesan Anda pada kolom yang tersedia.")
-        contact_from = """
-        <form action="https://formsubmit.co/riskamaulidya818@gmail.com" method="POST">
-            <input type="email" name="email" placeholder="Email Anda" required>
-            <textarea name="message" placeholder="Pesan Anda"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        """
-        st.markdown(contact_from, unsafe_allow_html=True)
-        def local_css(file_name):
-            with open(file_name) as f:
-                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-                
+
         local_css("D:\kalkulator_ph_larutan\style.css")
