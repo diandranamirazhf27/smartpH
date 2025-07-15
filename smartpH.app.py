@@ -4,6 +4,26 @@ import streamlit as st
 import math
 from streamlit_option_menu import option_menu
 
+st.markdown("""
+<style>
+    html, body, [class*="css"] {
+        background-color: #121212;
+        color: white;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+    .stButton>button {
+        background-color: #00bfff;
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        padding: 8px 16px;
+    }
+    .stSidebar {
+        background-color: #1f1f1f;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.set_page_config(page_title="Kalkulator pH", page_icon=":1234:", layout="wide")
 
 # Fungsi untuk menghitung pH asam kuat
